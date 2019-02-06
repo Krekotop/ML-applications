@@ -2,15 +2,16 @@
 """
 KNN regression using wave dataset from mglearn
 """
-from sklearn.model_selection import train_test_split
+
 import mglearn
 import numpy as np
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsRegressor
 fig,axes = plt.subplots(1,3,figsize=(15,4))
 line = np.linspace(-3,3,1000).reshape(-1,1)
+X,y = mglearn.datasets.make_wave(n_samples=40)
+X_train,X_test,y_train,y_test = train_test_split(X,y,random_state=0)
 for n_neighbors,ax in zip([1,3,9],axes):
     reg = KNeighborsRegressor(n_neighbors=n_neighbors)
     reg.fit(X_train,y_train)
