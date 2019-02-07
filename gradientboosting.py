@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-random forest on make_moons dataset
+gradient boosting on cancer dataset
 """
 import mglearn
 from sklearn.model_selection import train_test_split
